@@ -1,0 +1,50 @@
+.btnConatiner{
+    padding: .9rem 1rem;
+    border-radius: .6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+};
+.container{
+    display: flex;
+    flex-direction: row;
+};
+.titleStyle{
+    margin-right: .5rem
+};
+//size
+.smallSize{
+    width: 10rem;
+};
+.mediumSize{
+    width: 14rem;
+};
+.largeSize{
+    width: 20rem;
+};
+//mode
+.fillModeStyle{
+    background-color: rgb(5, 11, 87);
+    color: #fff;
+    font-size: 1rem;
+};
+.outLineModeStyle{
+   border: solid 2px rgb(5, 11, 87); 
+   color:  rgb(5, 11, 87);
+    font-size: 1rem;
+};
+.dangerModeStyle{
+    background-color: rgb(221, 0, 0);
+    color: #fff;
+    font-size: 1rem;
+};
+.disabledModeStyle{
+    background-color: rgb(160, 160, 160);
+    color: rgb(48, 48, 48);
+    font-size: 1rem;
+};
+
+
+
+
