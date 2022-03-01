@@ -7,9 +7,9 @@ const Home: FC = () => {
             <Layout footer searchBar selected="cart">
                 <ButtonCustom 
                     title="صفحه اصلی"
-                    mode='danger'
+                    disabled
                     Icon={HomeIcon}
-                    size="medium"
+                    size="small"
                 />
             </Layout>
             )

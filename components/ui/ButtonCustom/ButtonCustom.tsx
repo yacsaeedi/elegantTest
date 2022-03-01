@@ -6,18 +6,20 @@ import { FunctionComponent } from 'react';
 export interface ButtonProps extends DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>  {
     children?: ReactNode;
     title?: string;
-    mode?: "fill" | "outline" | "danger" ;
+    mode?: "contained" | "containedOutlined" | "danger" | "dangerOutlined" | "disabledOutlined";
     Icon: FunctionComponent<React.SVGAttributes<SVGElement>>;
     size?: "small" | "medium" | "large" ;
-    disabled?: boolean
+    disabled?: boolean;
 }
 const ButtonCustom: FC<ButtonProps> = ({ children,title,mode,Icon,size,disabled,...props}) => {
     return (
     <button 
             className={classNames({[styles.btnConatiner] : true},
-            {[styles.fillModeStyle]: mode === "fill"},
-            {[styles.outLineModeStyle]: mode === "outline" },
+            {[styles.containedModeStyle]: mode === "contained"},
+            {[styles.containedOutlinedModeStyle]: mode === "containedOutlined"},
             {[styles.dangerModeStyle]: mode === "danger" },
+            {[styles.dangerOutlinedModeStyle]: mode === "dangerOutlined"},
+            {[styles.disabledOutlinedModeStyle]: mode === "disabledOutlined"},
             {[styles.disabledModeStyle]: disabled},
             {[styles.smallSize] : size === "small"} ,
             {[styles.mediumSize]: size === "medium"},
@@ -30,7 +32,7 @@ const ButtonCustom: FC<ButtonProps> = ({ children,title,mode,Icon,size,disabled,
           <div className={styles.container}>
               {Icon?
               <Icon 
-                fill={mode === "danger" ? "white": disabled  ? "rgb(48, 48, 48)" : mode === "fill" ? "white"  : mode === "outline" ? 'rgb(5, 11, 87)' : ""} 
+                fill={mode === "danger" ? "white": mode === "dangerOutlined" ? "rgb(221, 0, 0)" : disabled  ? "rgb(48, 48, 48)" : mode === "contained" ? "white" : mode === "containedOutlined" ? "rgb(5, 11, 87)"  : mode === "disabledOutlined" ? 'rgb(160, 160, 160)' : ""} 
                 className={classNames('w-6 h-6')}
                />:null} 
                 <span className={styles.titleStyle}>{title}</span>
