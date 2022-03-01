@@ -3,15 +3,16 @@ import ButtonCustom from '@components/ui/ButtonCustom';
 import { Layout } from '@components/common';
 import HomeIcon from '@assets/svg/homeIcon.svg';
 const Home: FC = () => {
-    return  <Layout footer searchBar selected="cart">
-            
-        <ButtonCustom 
-            title="صفحه اصلی"
-            mode="disabled"
-            Icon={HomeIcon}
-            size="small"
-        />
-    </Layout>
+    return ( 
+            <Layout footer searchBar selected="cart">
+                <ButtonCustom 
+                    title="صفحه اصلی"
+                    mode='danger'
+                    Icon={HomeIcon}
+                    size="medium"
+                />
+            </Layout>
+            )
 };
 
 export default Home;

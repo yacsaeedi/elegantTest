@@ -34,7 +34,10 @@ body {
     min-height: 100%;
     margin: 0;
 }
-
+button:focus {
+    outline: 0px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}
 a {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

@@ -1,3 +1,5 @@
+
+//baseStyle
 .btnConatiner{
     padding: .9rem 1rem;
     border-radius: .6rem;
@@ -6,6 +8,9 @@
     align-items: center;
     text-align: center;
 };
+.btnConatiner:focus{
+    outline-width: 0px 
+}
 .container{
     display: flex;
     flex-direction: row;
@@ -13,7 +18,7 @@
 .titleStyle{
     margin-right: .5rem
 };
-//size
+//sizeStyle
 .smallSize{
     width: 10rem;
 };
@@ -23,7 +28,7 @@
 .largeSize{
     width: 20rem;
 };
-//mode
+//modeStyle
 .fillModeStyle{
     background-color: rgb(5, 11, 87);
     color: #fff;
