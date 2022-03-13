@@ -23,8 +23,12 @@ const getOutLinedColor = (variant: any) => {
     switch (variant) {
         case 'primary':
             return '#09359e';
-            break;
-
+        case 'danger':
+            return '#c00f39';
+        case 'success':
+            return '#08855f';
+        case 'disable':
+            return '#818181';
         default:
             break;
     }
@@ -39,11 +43,12 @@ const ButtonCustom: FC<ButtonProps> = ({
     disabled,
     bgColor,
     color,
-    variant,
+    variant = 'primary',
     txtStyle = '',
     styleCustom = '',
     ...props
 }) => {
+    const outlinedColor = getOutLinedColor(variant);
     return (
         <button
             className={classNames(
@@ -70,19 +75,7 @@ const ButtonCustom: FC<ButtonProps> = ({
             <div className={styles.container}>
                 {Icon ? (
                     <Icon
-                        fill={
-                            mode === 'outlined' && variant === 'danger'
-                                ? '#c00f39'
-                                : mode === 'outlined' && variant === 'primary'
-                                ? '#09359e'
-                                : mode === 'outlined' && variant === 'success'
-                                ? '#08855f'
-                                : mode === 'outlined' && variant === 'disable'
-                                ? '#818181'
-                                : mode === 'contained' && variant === 'disable'
-                                ? '#4b4b4b'
-                                : '#fff'
-                        }
+                        fill={mode === 'outlined' ? outlinedColor : '#fff'}
                         className={classNames('w-6 h-6', { [styles.iconStyle]: true })}
                     />
                 ) : null}
@@ -91,6 +84,7 @@ const ButtonCustom: FC<ButtonProps> = ({
                     className={classNames(
                         { [styles.titleStyle]: true },
                         { [styles.outlineDangerText]: mode === 'outlined' && variant === 'danger' },
+                        { [styles.outlineText]: mode === 'outlined' },
                         {
                             [styles.outlineSuccessText]:
                                 mode === 'outlined' && variant === 'success',
